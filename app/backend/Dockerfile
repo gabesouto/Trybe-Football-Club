@@ -24,6 +24,5 @@ COPY . .
 
 EXPOSE 3001
 
-ENTRYPOINT [ "npm" ]
-
-CMD [ "start" ]
+ENTRYPOINT [ "npm", "run" ]
+CMD [ "dev" ]
