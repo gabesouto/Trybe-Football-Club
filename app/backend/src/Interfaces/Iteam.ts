@@ -1,4 +1,4 @@
 export default interface Iteam {
-  id?:number
+  id:number
   teamName:string
 }
