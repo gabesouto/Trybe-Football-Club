@@ -1,3 +1,8 @@
+import { Router } from 'express';
 import teamRouter from './Team.route';
 
-export default teamRouter;
+const router = Router();
+
+router.use(teamRouter);
+
+export default router;
