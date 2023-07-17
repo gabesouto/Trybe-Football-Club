@@ -8,11 +8,16 @@ export default class loginController {
   ) { }
 
   public login = async (req: Request, res: Response): Promise <Response> => {
-    const serviceResponse = await this.loginService.login(req.body);
+    const serviceResponse = await this.loginService.loginValidation(req.body);
 
-    if (serviceResponse.status !== 'SUCCESSFUL') {
-      return res.status(mapStatusHTTP(serviceResponse.status)).json(serviceResponse.data);
+    if (serviceResponse.status === 'INVALID_DATA') {
+      return res.status(401).json(serviceResponse.data);
     }
-    return res.status(200).json({ token: serviceResponse.data });
+    if (serviceResponse.status !== 'SUCCESSFUL') {
+      return res.status(mapStatusHTTP(serviceResponse.status))
+        .json(serviceResponse.data);
+    }
+
+    return res.status(mapStatusHTTP(serviceResponse.status)).json({ token: serviceResponse.data });
   };
 }
