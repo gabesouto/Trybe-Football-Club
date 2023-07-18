@@ -17,28 +17,22 @@ export default class LoginService {
         data: { message: 'All fields must be filled' },
       };
     }
+
     const { email, password } = user;
     const Token = jwtUtil.enter({ email, password });
     return { status: 'SUCCESSFUL', data: Token };
   }
 
   public async loginValidation(LoginPayload: loginPayload): Promise<ServiceResponse<string>> {
-    if (!LoginPayload.email || !LoginPayload.password) {
-      return { status: 'UNAUTHORIZED', data: { message: 'All fields must be filled' } };
-    }
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const user = await this.loginModel.login(LoginPayload);
 
-    const passwordRequiredLength = 6;
-    if (!emailRegex.test(LoginPayload.email)
-     || LoginPayload.password.length < passwordRequiredLength
-    || !user
-    || !compareSync(LoginPayload.password, user.password)) {
+    if (!user || !compareSync(LoginPayload.password, user.password)) {
       return {
         status: 'INVALID_DATA',
         data: { message: 'Invalid email or password' },
       };
     }
+
     return this.login(LoginPayload);
   }
 }
