@@ -13,16 +13,12 @@ function enter(payload: TokenPayload): string {
   return token;
 }
 
-function check(token: string): TokenPayload {
-  /* Ao utilizarmos Type Assertion para `TokenPayload` aqui, estamos garantindo que
-  a função `jwt.verify` sempre retornará o `id` e o `email`. Nesse caso, irá, mas
-  vale lembrar que, se não retornar, perdemos a proteção da tipagem aqui. Usamos
-  a ferramenta com responsabilidade! */
-  const data = verify(token, secret) as TokenPayload;
-  return data;
+function decodedToken(token: string): TokenPayload {
+  const data = verify(token, secret);
+  return data as TokenPayload;
 }
 
 export default {
   enter,
-  check,
+  decodedToken,
 };

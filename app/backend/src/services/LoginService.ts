@@ -35,4 +35,19 @@ export default class LoginService {
 
     return this.login(LoginPayload);
   }
+
+  public async getRole(LoginPayload: loginPayload): Promise<ServiceResponse<string>> {
+    const user = await this.loginModel.login(LoginPayload);
+    if (!user) {
+      return {
+        status: 'UNAUTHORIZED',
+        data: { message: 'All fields must be filled' },
+      };
+    }
+
+    return {
+      status: 'SUCCESSFUL',
+      data: user.role,
+    };
+  }
 }

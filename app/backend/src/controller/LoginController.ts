@@ -20,4 +20,14 @@ export default class loginController {
 
     return res.status(mapStatusHTTP(serviceResponse.status)).json({ token: serviceResponse.data });
   };
+
+  public getRole = async (req: Request, res: Response): Promise <Response> => {
+    const { user } = res.locals;
+    try {
+      const serviceResponse = await this.loginService.getRole(user);
+      return res.status(mapStatusHTTP(serviceResponse.status)).json({ role: serviceResponse.data });
+    } catch (error) {
+      return res.status(401).json({ message: ' de ruim 2' });
+    }
+  };
 }
