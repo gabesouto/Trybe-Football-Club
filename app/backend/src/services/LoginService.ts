@@ -1,16 +1,16 @@
 import { compareSync } from 'bcryptjs';
-import LoginModel from '../database/models/LoginModel';
+import LoginModel from '../models/LoginModel';
 import { loginPayload } from '../types/loginPayload';
 import jwtUtil from '../utils copy/jwt.util';
 import { ServiceResponse, ILoginModel } from '../Interfaces';
 
 export default class LoginService {
   constructor(
-    private loginModel: ILoginModel = new LoginModel(),
+    private model: ILoginModel = new LoginModel(),
   ) { }
 
   public async login(LoginPayload: loginPayload): Promise<ServiceResponse<string>> {
-    const user = await this.loginModel.login(LoginPayload);
+    const user = await this.model.login(LoginPayload);
     if (!user) {
       return {
         status: 'UNAUTHORIZED',
@@ -24,7 +24,7 @@ export default class LoginService {
   }
 
   public async loginValidation(LoginPayload: loginPayload): Promise<ServiceResponse<string>> {
-    const user = await this.loginModel.login(LoginPayload);
+    const user = await this.model.login(LoginPayload);
 
     if (!user || !compareSync(LoginPayload.password, user.password)) {
       return {
@@ -37,7 +37,7 @@ export default class LoginService {
   }
 
   public async getRole(LoginPayload: loginPayload): Promise<ServiceResponse<string>> {
-    const user = await this.loginModel.login(LoginPayload);
+    const user = await this.model.login(LoginPayload);
     if (!user) {
       return {
         status: 'UNAUTHORIZED',

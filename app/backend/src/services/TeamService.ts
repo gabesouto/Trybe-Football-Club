@@ -1,12 +1,5 @@
-import TeamModel from '../database/models/TeamModel';
+import TeamModel from '../models/TeamModel';
 import Iteam, { IteamModel, ServiceResponse } from '../Interfaces';
-
-// src/services/BookService.ts
-
-// import BookModel from '../models/BookModel';
-// import { IBook } from '../interfaces/books/IBook';
-// import { IBookModel } from '../interfaces/books/IBookModel';
-// import { ServiceResponse } from '../interfaces/ServiceResponse';
 
 export default class TeamService {
   constructor(

@@ -1,6 +1,6 @@
-import { loginPayload } from '../../types/loginPayload';
-import { ILoginModel, IUser } from '../../Interfaces';
-import SequelizeUsers from './SequelizeUsersModel';
+import { loginPayload } from '../types/loginPayload';
+import { ILoginModel, IUser } from '../Interfaces';
+import SequelizeUsers from '../database/models/SequelizeUsersModel';
 
 export default class LoginModel implements ILoginModel {
   private model = SequelizeUsers;
