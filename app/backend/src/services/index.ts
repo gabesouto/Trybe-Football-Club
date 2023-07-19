@@ -1,5 +1,5 @@
-import TeamService from './TeamService';
-import LoginService from './LoginService';
+import teamService from './TeamService';
+import loginService from './LoginService';
+import matchService from './MatchService';
 
-export default TeamService;
-export { LoginService };
+export default { loginService, matchService, teamService };

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { LoginService } from '../services';
+import LoginService from '../services/LoginService';
 import mapStatusHTTP from '../utils/mapStatusHTTP';
 
 export default class loginController {
