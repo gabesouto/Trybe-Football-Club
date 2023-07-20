@@ -19,6 +19,12 @@ matchesRouter.patch(
   (req: Request, res: Response) => MatchesController.finishMatches(req, res),
 );
 
+matchesRouter.patch(
+  '/matches/:id/',
+  validateToken,
+  (req: Request, res: Response) => MatchesController.updateMatches(req, res),
+);
+
 // teamRouter.get('/teams/:id', (req: Request, res: Response) => TeamsController.findById(req, res));
 
 export default matchesRouter;
