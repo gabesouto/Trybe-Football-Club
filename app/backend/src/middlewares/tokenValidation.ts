@@ -14,7 +14,7 @@ export default function validateToken(req: Request, res:Response, next: NextFunc
     return res.status(401).json({ message: 'Token must be a valid token' });
   }
 
-  // Obtenha o token excluindo o prefixo 'Bearer '
+  // Obtenha o token excluindo o prefixo 'Bearer 'as
   const authToken = token.split(' ')[1];
   console.log('token', token);
 

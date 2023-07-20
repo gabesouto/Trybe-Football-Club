@@ -10,7 +10,7 @@ export default class MatchController {
   public async findMatches(req: Request, res: Response) {
     const { inProgress } = req.query;
 
-    if (inProgress === 'true') {
+    if (inProgress) {
       return this.findInProgress(req, res);
     }
     return this.findAll(req, res);

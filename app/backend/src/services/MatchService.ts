@@ -9,7 +9,6 @@ export default class MatchService {
 
   public async findAll(): Promise<ServiceResponse<IMatch[]>> {
     const allMatches = await this.model.findAll();
-    console.log('SERVICE', allMatches);
 
     return { status: 'SUCCESSFUL', data: allMatches };
   }
