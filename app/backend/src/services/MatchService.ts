@@ -14,9 +14,15 @@ export default class MatchService {
     return { status: 'SUCCESSFUL', data: allMatches };
   }
 
-  // public async findById(id: number): Promise<ServiceResponse<Iteam>> {
-  //   const team = await this.teamModel.findById(id);
-  //   if (!team) return { status: 'NOT_FOUND', data: { message: `team ${id} not found` } };
-  //   return { status: 'SUCCESSFUL', data: team };
-  // }
+  public async findInProgress(inProgress: string | string[]): Promise<ServiceResponse<IMatch[]>> {
+    const matches = await this.model.findInProgress(inProgress);
+    if (!matches) return { status: 'NOT_FOUND', data: { message: 'request  not found' } };
+    return { status: 'SUCCESSFUL', data: matches };
+  }
+
+  public async finishMatches(id: number): Promise<ServiceResponse<string>> {
+    const data = await this.model.finishMatches(id);
+    if (!data) return { status: 'NOT_FOUND', data: { message: 'request  not found' } };
+    return { status: 'SUCCESSFUL', data: 'Finished' };
+  }
 }
