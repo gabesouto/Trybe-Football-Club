@@ -48,4 +48,4 @@ export default class MatchService {
     if (!data) return { status: 'NOT_FOUND', data: { message: 'set data failed' } };
     return { status: 'SUCCESSFUL', data };
   }
- }
+}
