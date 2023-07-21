@@ -63,4 +63,30 @@ export default class MatchController {
 
     res.status(200).json(serviceResponse.data);
   }
+
+  public async setMatches(req: Request, res: Response) {
+    const {
+      homeTeamGoals,
+      awayTeamGoals,
+      homeTeamId,
+      awayTeamId,
+    } = req.body;
+
+    const serviceResponse = await this.matchService.setMatches(
+      homeTeamId,
+      awayTeamId,
+      homeTeamGoals,
+      awayTeamGoals,
+    );
+
+    if (serviceResponse.status !== 'SUCCESSFUL') {
+      return res.status(mapStatusHTTP(serviceResponse.status)).json(serviceResponse.data);
+    }
+
+    res.status(201).json(serviceResponse.data);
+  }
 }
+// "homeTeamId": 16, // O valor deve ser o id do time
+// "awayTeamId": 8, // O valor deve ser o id do time
+// "homeTeamGoals": 2,
+// "awayTeamGoals": 2,

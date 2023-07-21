@@ -31,4 +31,21 @@ export default class MatchService {
     if (!data) return { status: 'NOT_FOUND', data: { message: 'request  not found' } };
     return { status: 'SUCCESSFUL', data: 'updated' };
   }
-}
+
+  public async setMatches(
+    homeTeamId: number,
+    awayTeamId: number,
+    homeTeamGoals: number,
+    awayTeamGoals: number,
+  ):
+    Promise<ServiceResponse<IMatch>> {
+    const verifyId = await this.model.verifyTeamExistence(homeTeamId, awayTeamId);
+    if (verifyId.message === 'team not found') {
+      return { status: 'NOT_FOUND', data: { message: 'There is no team with such id!' } };
+    }
+
+    const data = await this.model.setMatches(homeTeamId, awayTeamId, homeTeamGoals, awayTeamGoals);
+    if (!data) return { status: 'NOT_FOUND', data: { message: 'set data failed' } };
+    return { status: 'SUCCESSFUL', data };
+  }
+ }

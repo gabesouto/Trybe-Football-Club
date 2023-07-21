@@ -1,6 +1,7 @@
 // src/routes/book.routes.ts
 
 import { Router, Request, Response } from 'express';
+import matchValidation from '../middlewares/matchValidation';
 import validateToken from '../middlewares/tokenValidation';
 import MatchController from '../controller/MatchController';
 
@@ -23,6 +24,12 @@ matchesRouter.patch(
   '/matches/:id/',
   validateToken,
   (req: Request, res: Response) => MatchesController.updateMatches(req, res),
+);
+matchesRouter.post(
+  '/matches',
+  validateToken,
+  matchValidation,
+  (req: Request, res: Response) => MatchesController.setMatches(req, res),
 );
 
 // teamRouter.get('/teams/:id', (req: Request, res: Response) => TeamsController.findById(req, res));

@@ -60,4 +60,34 @@ export default class MatchModel implements IMatchModel {
     if (data) return true;
     return false;
   }
+
+  public async setMatches(
+    homeTeamId: number,
+    awayTeamId: number,
+    homeTeamGoals: number,
+    awayTeamGoals: number,
+  ):
+    Promise<IMatch> {
+    const data = await this.model.create({
+      homeTeamId,
+      awayTeamId,
+      homeTeamGoals,
+      awayTeamGoals,
+      inProgress: true,
+    });
+
+    return data;
+  }
+
+  public async verifyTeamExistence(homeTeamId: number, awayTeamId: number)
+    :Promise<{ message : string }> {
+    const verifyHomeTeam = await this.model.findByPk(homeTeamId);
+    console.log(verifyHomeTeam);
+
+    const verifyAwayTeam = await this.model.findByPk(awayTeamId);
+    if (verifyAwayTeam && verifyHomeTeam) {
+      return { message: 'team found' };
+    }
+    return { message: 'team not found' };
+  }
 }
