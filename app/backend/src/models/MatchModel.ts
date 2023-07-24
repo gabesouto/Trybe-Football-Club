@@ -1,6 +1,7 @@
+import leaderboardQuery from '../utils/leaderBoardUtils';
 import SequelizeTeams from '../database/models/SequelizeTeamsModel';
 import SequelizeMatches from '../database/models/SequelizeMatchesModel';
-import { IMatch, IMatchModel } from '../Interfaces';
+import { ILeaderboard, IMatch, IMatchModel } from '../Interfaces';
 
 export default class MatchModel implements IMatchModel {
   private model = SequelizeMatches;
@@ -89,5 +90,12 @@ export default class MatchModel implements IMatchModel {
       return { message: 'team found' };
     }
     return { message: 'team not found' };
+  }
+
+  public async findHomeTeams(): Promise <ILeaderboard[]> {
+    const homeTeamLeaderBoard = await this.model.sequelize
+      ?.query(leaderboardQuery);
+
+    return homeTeamLeaderBoard as unknown as ILeaderboard[];
   }
 }

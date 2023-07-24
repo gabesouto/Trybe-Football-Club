@@ -5,6 +5,7 @@ import IUser from './IUser';
 import { IMatch } from './IMatch';
 import { ILoginModel } from './ILoginModel';
 import { IMatchModel } from './IMatchModel';
+import { ILeaderboard } from './ILeaderboard';
 
 export default Iteam;
-export { IteamModel, IMatch, ServiceResponse, IUser, ILoginModel, IMatchModel };
+export { IteamModel, IMatch, ServiceResponse, IUser, ILoginModel, IMatchModel, ILeaderboard };
