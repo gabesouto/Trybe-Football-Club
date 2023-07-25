@@ -39,4 +39,8 @@ seeders
 
 ```bash
  npm run db:reset
-``` importante: rode esse comando dentro da pasta BACKEND
+importante: rode esse comando dentro da pasta BACKEND
+```
+## ATENÇÃO
+todo código presente na pasta FRONTEND é de autoria da TRYBE
+
