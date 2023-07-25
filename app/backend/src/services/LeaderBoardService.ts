@@ -11,10 +11,4 @@ export default class LeaderBoardService {
 
     return { status: 'SUCCESSFUL', data: allMatches };
   }
-
-  // public async findById(id: number): Promise<ServiceResponse<Iteam>> {
-  //   const team = await this.teamModel.findById(id);
-  //   if (!team) return { status: 'NOT_FOUND', data: { message: `team ${id} not found` } };
-  //   return { status: 'SUCCESSFUL', data: team };
-  // }
 }

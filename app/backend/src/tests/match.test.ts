@@ -10,7 +10,6 @@ import SequelizeMatches from '../database/models/SequelizeMatchesModel';
 import { allMatches, matchesInprogress, matchesNotInProgress } from './mocks/match.mock';
 
 
-
 chai.use(chaiHttp);
 
 const { app } = new App();
@@ -24,7 +23,6 @@ describe('match tests', function() {
     sinon.stub(SequelizeMatches, 'findAll').resolves(allMatches as any);
 
 
-
     const { status, body } = await chai.request(app).get('/matches');
 
     expect(status).to.equal(200);
@@ -35,7 +33,6 @@ describe('match tests', function() {
     sinon.stub(SequelizeMatches, 'findAll').resolves(matchesInprogress as any);
 
 
-
     const { status, body } = await chai.request(app).get('/matches?inProgress=true');
 
     expect(status).to.equal(200);
@@ -44,7 +41,6 @@ describe('match tests', function() {
 
   it('should get all matches not in  progress', async function() {
     sinon.stub(SequelizeMatches, 'findAll').resolves(matchesNotInProgress as any);
-
 
 
     const { status, body } = await chai.request(app).get('/matches?inProgress=false');
@@ -78,9 +74,6 @@ describe('match tests', function() {
     expect(body).to.deep.equal(novaPartida);
  
   });
-
-
-
 
   afterEach(sinon.restore);
 });

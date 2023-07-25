@@ -1,7 +1,7 @@
 import { compareSync } from 'bcryptjs';
 import LoginModel from '../models/LoginModel';
 import { loginPayload } from '../types/loginPayload';
-import jwtUtil from '../utils copy/jwt.util';
+import jwtUtil from '../utils/jwt.util';
 import { ServiceResponse, ILoginModel } from '../Interfaces';
 
 export default class LoginService {

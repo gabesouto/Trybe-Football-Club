@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 
-import jwtUtil from '../utils copy/jwt.util';
+import jwtUtil from '../utils/jwt.util';
 
 export default function validateToken(req: Request, res:Response, next: NextFunction) {
   const token = req.headers.authorization;
@@ -24,6 +24,6 @@ export default function validateToken(req: Request, res:Response, next: NextFunc
   } catch (error) {
     console.log(error);
 
-    return res.status(402).json({ message: 'DEU RUIM' });
+    return res.status(401).json({ message: 'invalid token' });
   }
 }
