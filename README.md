@@ -1,9 +1,6 @@
 
 # TRYBE FOOTBALL CLUB
-
-
-Neste projeto, eu construí um back-end dockerizado utilizando a modelagem de dados com Sequelize. O desenvolvimento seguiu as regras de negócio fornecidas no projeto, e a API foi projetada para ser consumida pelo front-end já existente  no projeto.
-
+Neste projeto, desenvolvi um back-end utilizando Node.js e Express, empregando TypeScript para melhorar a segurança e a manutenibilidade do código. Utilizei o Docker para containerizar a aplicação, tornando-a facilmente escalável e distribuível. Para garantir a autenticação e autorização dos usuários, implementei o uso de JWT (JSON Web Tokens) na API. A modelagem de dados foi realizada com o Sequelize, garantindo a integridade dos dados de acordo com as regras de negócio fornecidas no projeto, proporcionando uma integração perfeita entre as camadas back-end e front-end.
 
 
 ## Stacks utilizadas
