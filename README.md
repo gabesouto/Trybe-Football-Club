@@ -42,13 +42,13 @@ Navegue até a raíz do projeto.
   <strong>Obs:</strong> Para rodar a aplicação dessa forma você deve ter o [Docker](https://www.docker.com/) instalado na sua máquina.
   
   </br>
-    Após clonar o projeto, instale as dependências na pasta back-end e front-end rodando o comando abaixo em cada pasta.
+    Após clonar o projeto, instale as dependências na pasta back-end e front-end.
     
-      npm install
+      npm run install:apps
   
   Na pasta app do projeto, suba os containers <strong>app_backend</strong>, <strong>app_frontend</strong> e <strong>db</strong> utilizando o docker-compose.dev.yalm. Utilize o comando abaixo.
 
-      npm run compose:up:dev
+      npm run compose:up
     
   Abra o terminal do container <strong>app_backend</strong> para verificar o servidor através dos logs do container.
 
