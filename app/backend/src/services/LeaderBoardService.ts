@@ -11,4 +11,16 @@ export default class LeaderBoardService {
 
     return { status: 'SUCCESSFUL', data: allMatches };
   }
+
+  public async findAwayTeams(): Promise<ServiceResponse<ILeaderboard | string>> {
+    const [allMatches] = await this.model.findAwayTeams();
+
+    return { status: 'SUCCESSFUL', data: allMatches };
+  }
+
+  public async findAll(): Promise<ServiceResponse<ILeaderboard | string>> {
+    const [allMatches] = await this.model.findAllLeaderboard();
+
+    return { status: 'SUCCESSFUL', data: allMatches };
+  }
 }

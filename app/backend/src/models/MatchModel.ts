@@ -1,4 +1,4 @@
-import leaderboardQuery from '../utils/leaderBoardUtils';
+import { leaderboardQueryAway, leaderboardQueryHome, leaderboardQueryOverall } from '../utils/leaderBoardUtils'
 import SequelizeTeams from '../database/models/SequelizeTeamsModel';
 import SequelizeMatches from '../database/models/SequelizeMatchesModel';
 import { ILeaderboard, IMatch, IMatchModel } from '../Interfaces';
@@ -94,8 +94,22 @@ export default class MatchModel implements IMatchModel {
 
   public async findHomeTeams(): Promise <ILeaderboard[]> {
     const homeTeamLeaderBoard = await this.model.sequelize
-      ?.query(leaderboardQuery);
+      ?.query(leaderboardQueryHome);
 
     return homeTeamLeaderBoard as unknown as ILeaderboard[];
+  }
+
+  public async findAwayTeams(): Promise<ILeaderboard[]> {
+    const awayTeamLeaderBoard = await this.model.sequelize
+      ?.query(leaderboardQueryAway);
+
+    return awayTeamLeaderBoard as unknown as ILeaderboard[];
+  }
+
+  public async findAllLeaderboard(): Promise<ILeaderboard[]> {
+    const Overall = await this.model.sequelize
+      ?.query(leaderboardQueryOverall);
+
+    return Overall as unknown as ILeaderboard[];
   }
 }

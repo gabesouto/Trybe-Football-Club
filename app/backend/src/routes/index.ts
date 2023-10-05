@@ -13,4 +13,5 @@ router.use(loginRouter);
 router.use(matchesRouter);
 
 router.use(leaderboardRouter);
+
 export default router;
