@@ -4,6 +4,7 @@ import MatchSettings from './pages/MatchSettings';
 import Leaderboard from './pages/Leaderboard';
 import Games from './pages/Games';
 import Login from './pages/Login';
+import SignUp from './pages/SignUp';
 import './styles/app.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Route path="/leaderboard" element={ <Leaderboard /> } />
       <Route path="/matches" element={ <Games /> } />
       <Route path="/login" element={ <Login /> } />
+      <Route path="/signup" element={<SignUp />} />
       <Route exact path="/" element={ <Navigate to="/leaderboard" /> } />
     </Routes>
   );
