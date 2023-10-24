@@ -1,12 +1,10 @@
-
 # TRYBE FOOTBALL CLUB
-Neste projeto, desenvolvi um back-end utilizando Node.js e Express, empregando TypeScript para melhorar a segurança e a manutenibilidade do código. Utilizei o Docker para containerizar a aplicação, tornando-a facilmente escalável e distribuível. Para garantir a autenticação e autorização dos usuários, implementei o uso de JWT (JSON Web Tokens) na API. A modelagem de dados foi realizada com o Sequelize, garantindo a integridade dos dados de acordo com as regras de negócio fornecidas no projeto, proporcionando uma integração perfeita entre as camadas back-end e front-end.
+
+In this project, I developed a back-end using Node.js and Express, employing TypeScript to enhance code security and maintainability. I used Docker to containerize the application, making it easily scalable and distributable. To ensure user authentication and authorization, I implemented the use of JWT (JSON Web Tokens) in the API. Data modeling was performed with Sequelize, ensuring data integrity according to the business rules provided in the project, providing seamless integration between the back-end and front-end layers.
 
 <br />
 
-## Stacks utilizadas
-
-
+## Stacks Used
 
 <div>
    <img src='https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white' alt='HTML' />
@@ -25,39 +23,37 @@ Neste projeto, desenvolvi um back-end utilizando Node.js e Express, empregando T
     <img src="https://img.shields.io/badge/Mocha-8D6748?style=for-the-badge&logo=Mocha&logoColor=white" alt="mocha"/>
 </div>
 
-## Rodando Localmente
+## Running Locally
 
-Para executar a aplicação inicie realizando o clone deste repositório com o comando abaixo.
+To run the application, start by cloning this repository with the command below.
 
     git clone git@github.com:gabesouto/trybe-futebol-clube.git
     
-Navegue até a raíz do projeto.
+Navigate to the project root.
 
     cd trybe-futebol-clube/
 
 <details>
-   <summary><strong>Rodando a aplicação com o Docker</strong></summary> 
+   <summary><strong>Running the Application with Docker</strong></summary> 
   </br>
   
-  <strong>Obs:</strong> Para rodar a aplicação dessa forma você deve ter o [Docker](https://www.docker.com/) instalado na sua máquina.
+  <strong>Note:</strong> To run the application this way, you must have [Docker](https://www.docker.com/) installed on your machine.
   
   </br>
-    Após clonar o projeto, instale as dependências na pasta back-end e front-end.
-    
+  After cloning the project, install the dependencies in the back-end and front-end folders.
+  
       npm run install:apps
   
-  Na pasta app do projeto, suba os containers <strong>app_backend</strong>, <strong>app_frontend</strong> e <strong>db</strong> utilizando o docker-compose.dev.yalm. Utilize o comando abaixo.
-
+  In the app folder of the project, bring up the containers <strong>app_backend</strong>, <strong>app_frontend</strong>, and <strong>db</strong> using the docker-compose.dev.yaml. Use the following command.
+  
       npm run compose:up
     
-  Abra o terminal do container <strong>app_backend</strong> para verificar o servidor através dos logs do container.
-
+  Open the terminal of the <strong>app_backend</strong> container to check the server through the container's logs.
+  
       docker-compose logs backend -f
   
-  Para executar os testes do back-end, abra um terminal local na pasta back-end e rode o comando abaixo.
+  To run the back-end tests, open a local terminal in the back-end folder and run the following command.
   
-     npm test
-
-    
+      npm test
 </details>
 
