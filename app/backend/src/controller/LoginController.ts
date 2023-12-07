@@ -3,31 +3,48 @@ import LoginService from '../services/LoginService';
 import mapStatusHTTP from '../utils/mapStatusHTTP';
 
 export default class loginController {
-  constructor(
-    private loginService: LoginService = new LoginService(),
-  ) { }
+   constructor(
+      private loginService: LoginService = new LoginService(),
+   ) { }
 
-  public login = async (req: Request, res: Response): Promise <Response> => {
-    const serviceResponse = await this.loginService.loginValidation(req.body);
+   public login = async (req: Request, res: Response): Promise<Response> => {
+      const serviceResponse = await this.loginService.loginValidation(req.body);
 
-    if (serviceResponse.status === 'INVALID_DATA') {
-      return res.status(401).json(serviceResponse.data);
-    }
-    if (serviceResponse.status !== 'SUCCESSFUL') {
-      return res.status(mapStatusHTTP(serviceResponse.status))
-        .json(serviceResponse.data);
-    }
+      if (serviceResponse.status === 'INVALID_DATA') {
+         return res.status(401).json(serviceResponse.data);
+      }
+      if (serviceResponse.status !== 'SUCCESSFUL') {
+         return res.status(mapStatusHTTP(serviceResponse.status))
+            .json(serviceResponse.data);
+      }
+      console.log(serviceResponse.data);
 
-    return res.status(mapStatusHTTP(serviceResponse.status)).json({ token: serviceResponse.data });
-  };
 
-  public getRole = async (req: Request, res: Response): Promise <Response> => {
-    const { user } = res.locals;
-    try {
-      const serviceResponse = await this.loginService.getRole(user);
-      return res.status(mapStatusHTTP(serviceResponse.status)).json({ role: serviceResponse.data });
-    } catch (error) {
-      return res.status(401).json({ message: ' de ruim 2' });
-    }
-  };
+      return res.status(mapStatusHTTP(serviceResponse.status)).json({ token: serviceResponse.data });
+   };
+
+   public getRole = async (req: Request, res: Response): Promise<Response> => {
+      const { user } = res.locals;
+      try {
+         const serviceResponse = await this.loginService.getRole(user);
+         return res.status(mapStatusHTTP(serviceResponse.status)).json({ role: serviceResponse.data });
+      } catch (error) {
+         return res.status(401).json({ message: ' de ruim 2' });
+      }
+   };
+
+
+   public signUp = async (req: Request, res: Response): Promise<Response> => {
+      const serviceResponse = await this.loginService.signUp(req.body);
+
+      if (serviceResponse.status === 'INVALID_DATA') {
+         return res.status(401).json(serviceResponse.data);
+      }
+      if (serviceResponse.status !== 'SUCCESSFUL') {
+         return res.status(mapStatusHTTP(serviceResponse.status))
+            .json(serviceResponse.data);
+      }
+
+      return res.status(mapStatusHTTP(serviceResponse.status)).json({ token: serviceResponse.data });
+   };
 }

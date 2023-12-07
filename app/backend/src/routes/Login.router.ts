@@ -1,5 +1,3 @@
-// src/routes/book.routes.ts
-
 import { Router, Request, Response } from 'express';
 import validateToken from '../middlewares/tokenValidation';
 import LoginController from '../controller/LoginController';
@@ -10,14 +8,20 @@ const loginController = new LoginController();
 const loginRouter = Router();
 
 loginRouter.post(
-  '/login',
-  loginValidation,
-  (req: Request, res: Response) => loginController.login(req, res),
+   '/login',
+   loginValidation,
+   (req: Request, res: Response) => loginController.login(req, res),
 );
+
 loginRouter.get(
-  '/login/role',
-  validateToken,
-  (req: Request, res: Response) => loginController.getRole(req, res),
+   '/login/role',
+   validateToken,
+   (req: Request, res: Response) => loginController.getRole(req, res),
+);
+
+loginRouter.post(
+   '/login/signup',
+   (req: Request, res: Response) => loginController.signUp(req, res),
 );
 
 export default loginRouter;

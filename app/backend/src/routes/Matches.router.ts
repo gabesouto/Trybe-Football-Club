@@ -10,28 +10,28 @@ const MatchesController = new MatchController();
 const matchesRouter = Router();
 
 matchesRouter.get(
-  '/matches',
-  (req: Request, res: Response) => MatchesController.findMatches(req, res),
+   '/matches',
+   (req: Request, res: Response) => MatchesController.findMatches(req, res),
 );
 
 matchesRouter.patch(
-  '/matches/:id/finish',
-  validateToken,
-  (req: Request, res: Response) => MatchesController.finishMatches(req, res),
+   '/matches/:id/finish',
+   validateToken,
+   (req: Request, res: Response) => MatchesController.finishMatches(req, res),
 );
 
 matchesRouter.patch(
-  '/matches/:id/',
-  validateToken,
-  (req: Request, res: Response) => MatchesController.updateMatches(req, res),
+   '/matches/:id/',
+   validateToken,
+   (req: Request, res: Response) => MatchesController.updateMatches(req, res),
 );
 matchesRouter.post(
-  '/matches',
-  validateToken,
-  matchValidation,
-  (req: Request, res: Response) => MatchesController.setMatches(req, res),
+   '/matches',
+   validateToken,
+   matchValidation,
+   (req: Request, res: Response) => MatchesController.setMatches(req, res),
 );
 
-// teamRouter.get('/teams/:id', (req: Request, res: Response) => TeamsController.findById(req, res));
+
 
 export default matchesRouter;
