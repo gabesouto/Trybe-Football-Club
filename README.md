@@ -1,6 +1,7 @@
 # TRYBE FOOTBALL CLUB
+## Overview
 
-In this project, I developed a back-end using Node.js and Express, employing TypeScript to enhance code security and maintainability. I used Docker to containerize the application, making it easily scalable and distributable. To ensure user authentication and authorization, I implemented the use of JWT (JSON Web Tokens) in the API. Data modeling was performed with Sequelize, ensuring data integrity according to the business rules provided in the project, providing seamless integration between the back-end and front-end layers.
+In this project, I developed a full-stack application using Node.js and Express, employing TypeScript to enhance code security and maintainability. I used Docker to containerize the application, making it easily scalable and distributable. To ensure user authentication and authorization, I implemented the use of JWT (JSON Web Tokens) in the API. Data modeling was performed with Sequelize, ensuring data integrity according to the business rules provided in the project, providing seamless integration between the back-end and front-end layers and for the frontend I used React and CS.
 
 <br />
 
@@ -25,7 +26,7 @@ In this project, I developed a back-end using Node.js and Express, employing Typ
 
 ## Running Locally
 
-To run the application, start by cloning this repository with the command below.
+To run the application, start by cloning this repository:
 
     git clone git@github.com:gabesouto/trybe-futebol-clube.git
     
@@ -33,7 +34,7 @@ Navigate to the project root.
 
     cd trybe-futebol-clube/
 
-<details>
+
    <summary><strong>Running the Application with Docker</strong></summary> 
   </br>
   
@@ -55,5 +56,5 @@ Navigate to the project root.
   To run the back-end tests, open a local terminal in the back-end folder and run the following command.
   
       npm test
-</details>
+
 
