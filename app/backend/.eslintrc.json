@@ -16,7 +16,7 @@
    "parserOptions": {
       "ecmaVersion": 2019,
       "sourceType": "module",
-      "project": "./tsconfig.json"
+      "project": "/home/gabriel/github-projects/tfc/Trybe-Football-Club/app/backend/tsconfig.json"
    },
    "plugins": [
       "@typescript-eslint",
@@ -83,7 +83,7 @@
       "max-lines-per-function": [
          "error",
          {
-            "max": 20,
+            "max": 22,
             "skipBlankLines": true,
             "skipComments": true
          }

@@ -7,7 +7,7 @@
       "rootDir": "./src",
       "strict": true,
       "moduleResolution": "node",
-      "baseUrl": ".",
+      "baseUrl": "./", // Adjusted the baseUrl to be more explicit
       "forceConsistentCasingInFileNames": true,
       "resolveJsonModule": true,
       "experimentalDecorators": true,

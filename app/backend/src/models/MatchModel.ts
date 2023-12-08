@@ -1,4 +1,7 @@
-import { leaderboardQueryAway, leaderboardQueryHome, leaderboardQueryOverall } from '../utils/leaderBoardUtils'
+import {
+  leaderboardQueryAway,
+  leaderboardQueryHome,
+  leaderboardQueryOverall } from '../utils/leaderBoardUtils';
 import SequelizeTeams from '../database/models/SequelizeTeamsModel';
 import SequelizeMatches from '../database/models/SequelizeMatchesModel';
 import { ILeaderboard, IMatch, IMatchModel } from '../Interfaces';
