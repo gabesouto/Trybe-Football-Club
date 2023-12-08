@@ -1,6 +1,10 @@
 # TRYBE FOOTBALL CLUB
 
+<div align="center">
+
 ![](https://github.com/gabesouto/Trybe-Football-Club/blob/main/ezgif.com-video-to-gif.gif)
+
+</div>
 
 ## Overview
 
