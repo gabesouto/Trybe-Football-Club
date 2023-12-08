@@ -1,7 +1,10 @@
 # TRYBE FOOTBALL CLUB
+
+![](https://github.com/gabesouto/Trybe-Football-Club/blob/main/ezgif.com-video-to-gif.gif)
+
 ## Overview
 
-In this project, I developed a full-stack application using Node.js and Express, employing TypeScript to enhance code security and maintainability. I used Docker to containerize the application, making it easily scalable and distributable. To ensure user authentication and authorization, I implemented the use of JWT (JSON Web Tokens) in the API. Data modeling was performed with Sequelize, ensuring data integrity according to the business rules provided in the project, providing seamless integration between the back-end and front-end layers and for the frontend I used React and CS.
+In this project, I developed a full-stack application using Node.js and Express, employing TypeScript to enhance code security and maintainability. I used Docker to containerize the application, making it easily scalable and distributable. To ensure user authentication and authorization, I implemented the use of JWT (JSON Web Tokens) in the API. Data modeling was performed with Sequelize, ensuring data integrity according to the business rules provided in the project, providing seamless integration between the back-end and for the front-end layers and I used React and CSS.
 
 <br />
 
@@ -35,15 +38,17 @@ Navigate to the project root.
     cd trybe-futebol-clube/
 
 
-   <summary><strong>Running the Application with Docker</strong></summary> 
+
   </br>
   
   <strong>Note:</strong> To run the application this way, you must have [Docker](https://www.docker.com/) installed on your machine.
   
   </br>
-  After cloning the project, install the dependencies in the back-end and front-end folders.
+  After cloning the project, install the dependencies.
   
+   ```
       npm run install:apps
+   ```
   
   In the app folder of the project, bring up the containers <strong>app_backend</strong>, <strong>app_frontend</strong>, and <strong>db</strong> using the docker-compose.dev.yaml. Use the following command.
   
