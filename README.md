@@ -45,7 +45,10 @@ Navigate to the project root.
   
   </br>
   After cloning the project, install the dependencies.
+  
+   ```
       npm run install:apps
+   ```
   
   In the app folder of the project, bring up the containers <strong>app_backend</strong>, <strong>app_frontend</strong>, and <strong>db</strong> using the docker-compose.dev.yaml. Use the following command.
   
