@@ -27,7 +27,7 @@ matchesRouter.patch(
 );
 matchesRouter.post(
    '/matches',
-   validateToken,
+   // validateToken,
    matchValidation,
    (req: Request, res: Response) => MatchesController.setMatches(req, res),
 );

@@ -3,7 +3,7 @@ import LoginModel from '../models/LoginModel';
 import { loginPayload } from '../types/loginPayload';
 import jwtUtil from '../utils/jwt.util';
 import { ServiceResponse, ILoginModel } from '../Interfaces';
-import { signUpPayload } from 'src/types/signUpPayload';
+import { signUpPayload } from '../types/signUpPayload';
 
 export default class LoginService {
    constructor(
