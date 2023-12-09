@@ -1,0 +1,122 @@
+
+.container{
+
+    align-items: center;
+    background: linear-gradient(180.21deg, #fafafa 7.32%, #f0f2f5 101.36%);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Estilos para o título "Create account" */
+h2{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.sign-area-form {
+    
+}
+
+/* Estilos para os campos de entrada de texto */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.25rem;
+    outline: none;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+/* Estilos para a mensagem de erro */
+.text-rose-500.text-xs.italic {
+    color: #e53e3e;
+    font-size: 0.75rem;
+    font-style: italic;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f4f6;
+    
+}
+
+/* Estilos para os botões "SIGN UP" e "Continue with Google" */
+button {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffed4a;
+    border: 1px solid #d1d5db;
+    border-radius: 0.25rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #f3f4f6;
+}
+
+/* Estilos para a linha e texto "Or" */
+.my-2.border-b.text-center.flex.items-center {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #d1d5db;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.my-2.border-b.text-center.flex.items-center span {
+    width: 33.33%;
+    border-bottom: 1px solid #d1d5db;
+    height: 1px;
+    background-color: transparent;
+}
+
+.my-2.border-b.text-center.flex.items-center p {
+    margin: 0;
+    padding: 0 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #999;
+    background-color: #ffffff;
+    transform: translateY(-50%);
+}
+
+/* Estilos para o ícone do Google e o texto "Continue with Google" */
+button svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+/* Estilos para o link de "Continue with Google" */
+button span {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #333;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0px 0px 0px 3px rgba(66, 153, 225, 0.5);
+}
