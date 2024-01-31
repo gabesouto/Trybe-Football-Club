@@ -6,13 +6,46 @@
 
 </div>
 
-## Overview
+## Descrição
 
-In this project, I developed a full-stack application using Node.js and Express, employing TypeScript to enhance code security and maintainability. I used Docker to containerize the application, making it easily scalable and distributable. To ensure user authentication and authorization, I implemented the use of JWT (JSON Web Tokens) in the API. Data modeling was performed with Sequelize, ensuring data integrity according to the business rules provided in the project, providing seamless integration between the back-end and for the front-end layers and I used React and CSS.
+Neste projeto, desenvolvi um site para o acompanhamento de times de futebol e partidas. A aplicação full-stack utiliza Node.js e Express, com TypeScript para melhorias de segurança e manutenibilidade. A containerização é feita com Docker, proporcionando escalabilidade e facilidade de distribuição.
+
+O foco principal é permitir aos usuários adicionar partidas, editar placares, incluir times e visualizar placares com filtros específicos. Para autenticação e autorização, implementei JWT (JSON Web Tokens) na API. A modelagem de dados utiliza Sequelize para garantir a integridade de acordo com as regras de negócio.
+
+No front-end, React e CSS foram empregados para criar uma interface intuitiva e amigável, facilitando a interação dos usuários com as funcionalidades oferecidas pelo site.
 
 <br />
 
-## Stacks Used
+## Funcionalidades
+
+1. **Login:**
+   - Permite autenticação segura dos usuários utilizando JSON Web Tokens (JWT).
+
+2. **Gerenciar Times:**
+   - Adicionar novos times.
+   - Editar informações de times existentes.
+
+3. **Gerenciar Partidas:**
+   - Adicionar novas partidas.
+   - Editar informações relacionadas a partidas.
+
+4. **Filtrar Placares:**
+   - Visualizar placares com base em filtros específicos.
+  
+<br/>
+
+<details>
+<summary>💻 Documentação Backend</summary>
+
+## Banco de dados
+
+    ![Exemplo banco de dados](assets/diagrama-er.png)
+
+  ⚠️ O `package.json` do diretório `app/backend` contém um script `db:reset` que é responsável por "dropar" o banco, recriar e executar as _migrations_ e _seeders_. Você pode executá-lo com o commando `npm run db:reset` se por algum motivo precisar recriar a base de dados;
+
+  ⚠️ Já existem _seeders_ prontas em `app/backend/src/database/seeders`. Você também pode usá-las como referência para criar suas _migrations_ de acordo com os campos e tabelas que as _seeders_ irão popular.  Assim que criar uma _migration_ você deve renomear a _seeder_ correspondente retirando o underline (`_`) ao fim dela, assim o script `db:reset` vai usá-la nos testes e você se certificará se sua _migration_ funcionou como o esperado.
+
+## Stacks Utilizadas
 
 <div>
    <img src='https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white' alt='HTML' />
