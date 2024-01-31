@@ -39,11 +39,69 @@ No front-end, React e CSS foram empregados para criar uma interface intuitiva e 
 
 ## Banco de dados
 
-    ![Exemplo banco de dados](assets/diagrama-er.png)
+ ![](https://github.com/gabesouto/Trybe-Football-Club/blob/main/diagrama-er.png)
 
   ⚠️ O `package.json` do diretório `app/backend` contém um script `db:reset` que é responsável por "dropar" o banco, recriar e executar as _migrations_ e _seeders_. Você pode executá-lo com o commando `npm run db:reset` se por algum motivo precisar recriar a base de dados;
 
   ⚠️ Já existem _seeders_ prontas em `app/backend/src/database/seeders`. Você também pode usá-las como referência para criar suas _migrations_ de acordo com os campos e tabelas que as _seeders_ irão popular.  Assim que criar uma _migration_ você deve renomear a _seeder_ correspondente retirando o underline (`_`) ao fim dela, assim o script `db:reset` vai usá-la nos testes e você se certificará se sua _migration_ funcionou como o esperado.
+
+  ## API endpoints
+  
+  ### Produtos
+
+1. **Listar Todos os Times:**
+   - Método: GET
+   - Endpoint: `/teams`
+   - Descrição: Retorna um array com todos os times cadastrados.
+
+2. **Buscar Time por ID:**
+   - Método: GET
+   - Endpoint: `/teams/:id`
+   - Descrição: Retorna um objeto com o time que corresponde ao ID especificado.
+
+3. **Criar Novo Time:**
+   - Método: POST
+   - Endpoint: `/teams`
+   - Descrição: Cria um novo time com base nos dados fornecidos.
+  
+### Matches
+
+7. **Listar Todas as Vendas:**
+   - Método: GET
+   - Endpoint: `/matches`
+   - Descrição: Retorna um array com todas as partidas registradas.
+
+8. **Buscar Partida por ID:**
+   - Método: GET
+   - Endpoint: `/matches/:id`
+   - Descrição: Retorna um objeto com a partida que corresponde ao ID especificado.
+
+9. **Criar Nova Partida:**
+   - Método: POST
+   - Endpoint: `/matches`
+   - Descrição: Cria uma nova venda com base nos dados fornecidos.
+
+10. **Atualizar Partida por ID:**
+    - Método: PUT
+    - Endpoint: `/matches/:id`
+    - Descrição: Atualiza uma partida existente que corresponde ao ID especificado.
+
+## Leaderboard
+
+11. **Visualizar o placar:**
+   - Método: GET
+   - Endpoint: `/leaderboard`
+
+12. **Filtrar Placar Por Vitórias Em Casa**
+   - Método: GET
+   - Endpoint: `/leaderboard/home`
+     
+13. **Filtrar Placar Por Vitórias Fora De Casa**
+   - Método: GET
+   - Endpoint: `/leaderboard/away`
+
+   </details>
+
 
 ## Stacks Utilizadas
 
@@ -64,38 +122,38 @@ No front-end, React e CSS foram empregados para criar uma interface intuitiva e 
     <img src="https://img.shields.io/badge/Mocha-8D6748?style=for-the-badge&logo=Mocha&logoColor=white" alt="mocha"/>
 </div>
 
-## Running Locally
+## Executando A Aplicação
 
-To run the application, start by cloning this repository:
+Para executar a aplicação, comece clonando este repositório:
 
     git clone git@github.com:gabesouto/trybe-futebol-clube.git
     
-Navigate to the project root.
+Acessa a página do projeto
 
     cd trybe-futebol-clube/
 
-
+  </br>
+ 
+  
+  <strong>Note:</strong>Para executar a aplicação desta maneira, você deve ter o [Docker](https://www.docker.com/) instalado em sua máquina.
 
   </br>
   
-  <strong>Note:</strong> To run the application this way, you must have [Docker](https://www.docker.com/) installed on your machine.
-  
-  </br>
-  After cloning the project, install the dependencies.
+Após clonar o projeto instale as depêndencias
   
    ```
       npm run install:apps
    ```
   
-  In the app folder of the project, bring up the containers <strong>app_backend</strong>, <strong>app_frontend</strong>, and <strong>db</strong> using the docker-compose.dev.yaml. Use the following command.
+Na pasta "app" do projeto, inicie os containers <strong>app_backend</strong>, <strong>app_frontend</strong> e db utilizando o arquivo docker-compose.dev.yaml. Utilize o seguinte comando.
   
       npm run compose:up
     
-  Open the terminal of the <strong>app_backend</strong> container to check the server through the container's logs.
+Abra o terminal do container <strong>app_backend</strong> para verificar o servidor por meio dos registros (logs) do container.
   
       docker-compose logs backend -f
-  
-  To run the back-end tests, open a local terminal in the back-end folder and run the following command.
+
+Para executar os testes do back-end, abra um terminal local na pasta do back-end e execute o seguinte comando.
   
       npm test
 
