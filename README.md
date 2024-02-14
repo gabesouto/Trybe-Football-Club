@@ -86,7 +86,7 @@ No front-end, React e CSS foram empregados para criar uma interface intuitiva e 
     - Endpoint: `/matches/:id`
     - Descrição: Atualiza uma partida existente que corresponde ao ID especificado.
 
-## Leaderboard
+##@ Leaderboard
 
 11. **Visualizar o placar:**
    - Método: GET
@@ -122,7 +122,7 @@ No front-end, React e CSS foram empregados para criar uma interface intuitiva e 
     <img src="https://img.shields.io/badge/Mocha-8D6748?style=for-the-badge&logo=Mocha&logoColor=white" alt="mocha"/>
 </div>
 
-## Executando A Aplicação
+## Executando a Aplicação
 
 Para executar a aplicação, comece clonando este repositório:
 
