@@ -37,7 +37,6 @@ ORDER BY
     name ASC;
 `;
 
-
 const leaderboardQueryAway = `
 SELECT
     t.team_name AS name,
@@ -46,9 +45,12 @@ SELECT
              ELSE 0
         END) AS totalPoints,
     COUNT(*) AS totalGames,
-    SUM(CASE WHEN m.away_team_id = t.id AND m.away_team_goals > m.home_team_goals THEN 1 ELSE 0 END) AS totalVictories,
-    SUM(CASE WHEN m.away_team_id = t.id AND m.away_team_goals = m.home_team_goals THEN 1 ELSE 0 END) AS totalDraws,
-    SUM(CASE WHEN m.away_team_id = t.id AND m.away_team_goals < m.home_team_goals THEN 1 ELSE 0 END) AS totalLosses,
+    SUM(CASE WHEN m.away_team_id = t.id AND m.away_team_goals > m.home_team_goals THEN 1 ELSE 0 END)
+     AS totalVictories,
+    SUM(CASE WHEN m.away_team_id = t.id AND m.away_team_goals = m.home_team_goals THEN 1 ELSE 0 END)
+     AS totalDraws,
+    SUM(CASE WHEN m.away_team_id = t.id AND m.away_team_goals < m.home_team_goals THEN 1 ELSE 0 END)
+     AS totalLosses,
     SUM(CASE WHEN m.away_team_id = t.id THEN m.away_team_goals ELSE 0 END) AS goalsFavor,
     SUM(CASE WHEN m.away_team_id = t.id THEN m.home_team_goals ELSE 0 END) AS goalsOwn,
     SUM(CASE WHEN m.away_team_id = t.id THEN m.away_team_goals ELSE 0 END) -
@@ -81,11 +83,14 @@ SELECT
     END) AS totalPoints,
     COUNT(*) AS totalGames,
     SUM(CASE WHEN (m.home_team_id = t.id AND m.home_team_goals > m.away_team_goals) OR 
-                  (m.away_team_id = t.id AND m.away_team_goals > m.home_team_goals) THEN 1 ELSE 0 END) AS totalVictories,
+                (m.away_team_id = t.id AND m.away_team_goals > m.home_team_goals) THEN 1 ELSE 0 END)
+                   AS totalVictories,
     SUM(CASE WHEN (m.home_team_id = t.id AND m.home_team_goals = m.away_team_goals) OR 
-                  (m.away_team_id = t.id AND m.away_team_goals = m.home_team_goals) THEN 1 ELSE 0 END) AS totalDraws,
+                (m.away_team_id = t.id AND m.away_team_goals = m.home_team_goals) THEN 1 ELSE 0 END)
+                   AS totalDraws,
     SUM(CASE WHEN (m.home_team_id = t.id AND m.home_team_goals < m.away_team_goals) OR 
-                  (m.away_team_id = t.id AND m.away_team_goals < m.home_team_goals) THEN 1 ELSE 0 END) AS totalLosses,
+                (m.away_team_id = t.id AND m.away_team_goals < m.home_team_goals) THEN 1 ELSE 0 END)
+                   AS totalLosses,
     SUM(CASE WHEN m.home_team_id = t.id THEN m.home_team_goals ELSE 0 END) +
     SUM(CASE WHEN m.away_team_id = t.id THEN m.away_team_goals ELSE 0 END) AS goalsFavor,
     SUM(CASE WHEN m.home_team_id = t.id THEN m.away_team_goals ELSE 0 END) +
@@ -112,6 +117,5 @@ ORDER BY
     goalsFavor DESC,
     name ASC;
 `;
-
 
 export { leaderboardQueryHome, leaderboardQueryAway, leaderboardQueryOverall };

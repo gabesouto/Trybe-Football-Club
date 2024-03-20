@@ -1,4 +1,3 @@
-
 import { Router, Request, Response } from 'express';
 import LeaderboardController from '../controller/LeaderboardController';
 

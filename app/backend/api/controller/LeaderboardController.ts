@@ -27,7 +27,6 @@ export default class LeaderboardController {
     res.status(200).json(serviceResponse.data);
   }
 
-
   public async findAll(_req: Request, res: Response) {
     const serviceResponse = await this.service.findAll();
     console.log(' CONTROLLER', serviceResponse.data);
