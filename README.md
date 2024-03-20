@@ -6,104 +6,104 @@
 
 </div>
 
-## Descrição
+## Description
 
-Neste projeto, desenvolvi um site para o acompanhamento de times de futebol e partidas. A aplicação full-stack utiliza Node.js e Express, com TypeScript para melhorias de segurança e manutenibilidade. A containerização é feita com Docker, proporcionando escalabilidade e facilidade de distribuição.
+In this project, I developed a website for tracking football teams and matches. The full-stack application utilizes Node.js and Express, with TypeScript for security and maintainability improvements. Containerization is done with Docker, providing scalability and ease of distribution.
 
-O foco principal é permitir aos usuários adicionar partidas, editar placares, incluir times e visualizar placares com filtros específicos. Para autenticação e autorização, implementei JWT (JSON Web Tokens) na API. A modelagem de dados utiliza Sequelize para garantir a integridade de acordo com as regras de negócio.
+The main focus is to allow users to add matches, edit scores, include teams, and view scores with specific filters. For authentication and authorization, I implemented JWT (JSON Web Tokens) in the API. Data modeling uses Sequelize to ensure integrity according to business rules.
 
-No front-end, React e CSS foram empregados para criar uma interface intuitiva e amigável, facilitando a interação dos usuários com as funcionalidades oferecidas pelo site.
+On the front-end, React and CSS were employed to create an intuitive and user-friendly interface, facilitating user interaction with the features offered by the website.
+
 
 <br />
 
-## Funcionalidades
+## Features
 
 1. **Login:**
-   - Permite autenticação segura dos usuários utilizando JSON Web Tokens (JWT).
+   - Allows secure authentication of users using JSON Web Tokens (JWT).
 
-2. **Gerenciar Times:**
-   - Adicionar novos times.
-   - Editar informações de times existentes.
+2. **Manage Teams:**
+   - Add new teams.
+   - Edit information of existing teams.
 
-3. **Gerenciar Partidas:**
-   - Adicionar novas partidas.
-   - Editar informações relacionadas a partidas.
+3. **Manage Matches:**
+   - Add new matches.
+   - Edit match-related information.
 
-4. **Filtrar Placares:**
-   - Visualizar placares com base em filtros específicos.
-  
+4. **Filter Scores:**
+   - View scores based on specific filters.
 <br/>
 
 <details>
 <summary>💻 Documentação Backend</summary>
 
-## Banco de dados
+## Database
 
- ![](https://github.com/gabesouto/Trybe-Football-Club/blob/main/diagrama-er.png)
+![ER Diagram](https://github.com/gabesouto/Trybe-Football-Club/blob/main/diagrama-er.png)
 
-  ⚠️ O `package.json` do diretório `app/backend` contém um script `db:reset` que é responsável por "dropar" o banco, recriar e executar as _migrations_ e _seeders_. Você pode executá-lo com o commando `npm run db:reset` se por algum motivo precisar recriar a base de dados;
+⚠️ The `package.json` in the `app/backend` directory contains a script `db:reset` that is responsible for dropping the database, recreating it, and running migrations and seeders. You can execute it with the command `npm run db:reset` if you need to recreate the database for any reason.
 
-  ⚠️ Já existem _seeders_ prontas em `app/backend/src/database/seeders`. Você também pode usá-las como referência para criar suas _migrations_ de acordo com os campos e tabelas que as _seeders_ irão popular.  Assim que criar uma _migration_ você deve renomear a _seeder_ correspondente retirando o underline (`_`) ao fim dela, assim o script `db:reset` vai usá-la nos testes e você se certificará se sua _migration_ funcionou como o esperado.
+⚠️ There are already ready seeders in `app/backend/src/database/seeders`. You can also use them as a reference to create your migrations according to the fields and tables that the seeders will populate. Once you create a migration, you should rename the corresponding seeder by removing the underscore (`_`) at the end of it. This way, the `db:reset` script will use it in tests, and you will ensure that your migration worked as expected.
 
-  ## API endpoints
-  
-  ### Produtos
+## API Endpoints
 
-1. **Listar Todos os Times:**
-   - Método: GET
+### Teams
+
+1. **List All Teams:**
+   - Method: GET
    - Endpoint: `/teams`
-   - Descrição: Retorna um array com todos os times cadastrados.
+   - Description: Returns an array with all registered teams.
 
-2. **Buscar Time por ID:**
-   - Método: GET
+2. **Get Team by ID:**
+   - Method: GET
    - Endpoint: `/teams/:id`
-   - Descrição: Retorna um objeto com o time que corresponde ao ID especificado.
+   - Description: Returns an object with the team corresponding to the specified ID.
 
-3. **Criar Novo Time:**
-   - Método: POST
+3. **Create New Team:**
+   - Method: POST
    - Endpoint: `/teams`
-   - Descrição: Cria um novo time com base nos dados fornecidos.
+   - Description: Creates a new team based on the provided data.
   
 ### Matches
 
-7. **Listar Todas as Vendas:**
-   - Método: GET
+7. **List All Matches:**
+   - Method: GET
    - Endpoint: `/matches`
-   - Descrição: Retorna um array com todas as partidas registradas.
+   - Description: Returns an array with all registered matches.
 
-8. **Buscar Partida por ID:**
-   - Método: GET
+8. **Get Match by ID:**
+   - Method: GET
    - Endpoint: `/matches/:id`
-   - Descrição: Retorna um objeto com a partida que corresponde ao ID especificado.
+   - Description: Returns an object with the match corresponding to the specified ID.
 
-9. **Criar Nova Partida:**
-   - Método: POST
+9. **Create New Match:**
+   - Method: POST
    - Endpoint: `/matches`
-   - Descrição: Cria uma nova venda com base nos dados fornecidos.
+   - Description: Creates a new match based on the provided data.
 
-10. **Atualizar Partida por ID:**
-    - Método: PUT
+10. **Update Match by ID:**
+    - Method: PUT
     - Endpoint: `/matches/:id`
-    - Descrição: Atualiza uma partida existente que corresponde ao ID especificado.
+    - Description: Updates an existing match corresponding to the specified ID.
 
-##@ Leaderboard
+## Leaderboard
 
-11. **Visualizar o placar:**
-   - Método: GET
+11. **View Leaderboard:**
+   - Method: GET
    - Endpoint: `/leaderboard`
 
-12. **Filtrar Placar Por Vitórias Em Casa**
-   - Método: GET
+12. **Filter Leaderboard by Home Wins**
+   - Method: GET
    - Endpoint: `/leaderboard/home`
      
-13. **Filtrar Placar Por Vitórias Fora De Casa**
-   - Método: GET
+13. **Filter Leaderboard by Away Wins**
+   - Method: GET
    - Endpoint: `/leaderboard/away`
 
-   </details>
+</details>
 
 
-## Stacks Utilizadas
+## Stacks 
 
 <div>
    <img src='https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white' alt='HTML' />
@@ -122,38 +122,39 @@ No front-end, React e CSS foram empregados para criar uma interface intuitiva e 
     <img src="https://img.shields.io/badge/Mocha-8D6748?style=for-the-badge&logo=Mocha&logoColor=white" alt="mocha"/>
 </div>
 
-## Executando a Aplicação
+## Running the Application
 
-Para executar a aplicação, comece clonando este repositório:
+To run the application, start by cloning this repository:
 
-    git clone git@github.com:gabesouto/trybe-futebol-clube.git
-    
-Acessa a página do projeto
+```bash
+   git clone git@github.com:gabesouto/trybe-futebol-clube.git
+```
+
+Navigate to the project directory:
 
     cd trybe-futebol-clube/
 
   </br>
  
-  
-  <strong>Note:</strong>Para executar a aplicação desta maneira, você deve ter o [Docker](https://www.docker.com/) instalado em sua máquina.
+<strong>Note:</strong> To run the application this way, you must have Docker installed on your machine.
 
   </br>
   
-Após clonar o projeto instale as depêndencias
+After cloning the project, install the dependencies:
   
    ```
       npm run install:apps
    ```
   
-Na pasta "app" do projeto, inicie os containers <strong>app_backend</strong>, <strong>app_frontend</strong> e db utilizando o arquivo docker-compose.dev.yaml. Utilize o seguinte comando.
+In the "app" folder of the project, start the containers <strong>app_backend</strong>, <strong>app_frontend</strong>, and db using the docker-compose.dev.yaml file. Use the following command:
   
       npm run compose:up
     
-Abra o terminal do container <strong>app_backend</strong> para verificar o servidor por meio dos registros (logs) do container.
+Open the terminal of the <strong>app_backend</strong> container to check the server through the container's logs:
   
       docker-compose logs backend -f
 
-Para executar os testes do back-end, abra um terminal local na pasta do back-end e execute o seguinte comando.
+To run the backend tests, open a local terminal in the backend folder and run the following command:
   
       npm test
 
